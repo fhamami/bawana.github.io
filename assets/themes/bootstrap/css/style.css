@@ -1,65 +1,300 @@
-/* Custom container */
-.container-narrow {
-  margin: 0 auto;
-  max-width: 700px; }
+/*
+ * Base structure
+ */
 
-.container-narrow > hr {
-  margin: 30px 0; }
+html,
+body {
+  height: 100%;
+  background-color: RGBA(1, 174, 240, 0.83);
+}
+body {
+  color: #fff;
+  text-align: center;
+  /*text-shadow: 0 1px 3px rgba(0,0,0,.5);*/
+}
 
-.navbar .nav {
-  float: right; }
+.skrollr-desktop body {
+    height:100% !important;
+}
 
-/* posts index */
-.post > h3.title {
-  position: relative;
-  padding-top: 10px; }
+#skrollr-body {
+    height:100%;
+    position:relative;
+    overflow: hidden;
+}
 
-.post > h3.title span.date {
-  position: absolute;
-  right: 0;
-  font-size: 0.9em; }
+/*
+ * Globals
+ */
 
-.post > .more {
-  margin: 10px 0;
-  text-align: left; }
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
 
-/* post-full*/
-.post-full .date {
-  margin-bottom: 20px;
-  font-weight: bold; }
+/* Padding for spacing */
+/*.inner {
+  padding: 30px;
+}*/
 
-/* tag_box */
-.tag_box {
-  list-style: none;
+/*
+ * header
+ */
+
+.offset {
+  margin-top: 0;
+  padding-top: 270px;
+  text-align: center;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 700px;
+  font-weight: bold;
+  text-align: center;
+  background: gold;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.header.small {
+  height: 70px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.header.small ~ .offset {
+  padding-top: 140px;
+}
+.header.small .header_logo {
+  padding-top: 20px;
+  font-size: 20px;
+  text-shadow: none;
+}
+
+.header_logo {
+  font-family: 'Oswald', sans-serif;
   margin: 0;
-  overflow: hidden; }
+  padding-top: 80px;
+  font-size: 50px;
+  text-shadow: 3px 4px rgba(0, 0, 0, 0.1);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
 
-.tag_box li {
-  line-height: 28px; }
+.header img {
+  height: 200px;
+  width: 200px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-top: 200px;
+}
 
-.tag_box li i {
-  opacity: 0.9; }
+.header.small img {
+  height: 50px;
+  width: 50px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-top: 10px;
+}
 
-.tag_box.inline li {
-  float: left; }
+/*
+ * content
+ */
 
-.tag_box a {
-  padding: 3px 6px;
-  margin: 2px;
-  background: #eee;
-  color: #555;
-  border-radius: 3px;
-  text-decoration: none;
-  border: 1px dashed #cccccc; }
+.list_tmp {
+    background-size: cover;
+    min-height:380px;
+    padding-top:150px;
+    font-size:44px;
+    margin-bottom:6px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.68);
+    color: rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+    border: 8px solid rgba(99, 214, 132, 0.66)
+}
 
-.tag_box a span {
-  vertical-align: super;
-  font-size: 0.8em; }
+.list_tmp:hover {
+    box-shadow: 1px 3px 7px rgba(0,0,0,0.25);
+    color: rgba(255,255,255,0.9);
+}
 
-.tag_box a:hover {
-  background-color: #e5e5e5; }
+.list_tmp p {
+  margin: 100px 0 0 !important;
+}
 
-.tag_box a.active {
-  background: #57A957;
-  border: 1px solid #4c964d;
-  color: #FFF; }
+.template_1 { background-image: url("../img/carousel.jpg");}
+.template_2 { background-image: url("../img/blog.jpg");}
+
+/* Custom default button */
+.btn-default {
+    /*color: #333;*/
+    text-shadow: none; /* Prevent inheritence from `body` */
+    /*background-color: #fff;*/
+    border: 0.1px solid #3fa9f5;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    /*color: #333;*/
+    text-shadow: none; /* Prevent inheritence from `body` */
+    /*background-color: #fff;*/
+    border: 0.1px solid rgb(80, 205, 170);
+}
+
+.head .btn-default {
+    text-shadow: none;
+    /*! background:transparent; */
+    color:rgb(43, 187, 242);
+    /*! background: #fff; */
+    border-radius: 0;
+}
+.head .btn-default:hover,
+.head .btn-default:focus {
+    color:rgb(80, 205, 170);
+    -webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,.8);
+    -moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,.8);
+    box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,.8);
+    background: #fff;
+}
+.head .btn-default:active, 
+.head .btn-default.active {
+    color:#fff;
+    -webkit-box-shadow:inset 0px 0px 0px 1px #fff;
+    -moz-box-shadow:inset 0px 0px 0px 1px #fff;
+    box-shadow:inset 0px 0px 0px 1px #fff;
+    background: transparent;
+}
+
+@media (max-width: 767px) {
+  .head { min-height:420px; padding-top:160px; }
+  .head .lead { font-size: 34px; }
+}
+
+
+/*
+ * Footer
+ */
+
+footer{
+    background-color: RGB(43, 187, 242);
+    /*box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.04);*/
+    box-sizing: border-box;
+    width: 100%;
+    font: bold 16px sans-serif;
+    text-align: left;
+    padding: 20px 60px 55px;
+    overflow: hidden;
+    height: 300px;
+    margin-top: 100px;
+}
+
+/* Footer left */
+
+footer .footer-left{
+    float: left;
+}
+
+footer h3{
+    color:  #fff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0;
+}
+
+footer .footer-links{
+    color: #95A4A9;
+    margin: 22px 0 14px;
+    padding: 0;
+}
+
+footer .footer-links a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .footer-company-name{
+    color:  #e7e7e7;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+
+/* Footer right */
+
+footer .footer-right{
+    float: right;
+    width: 100%;
+}
+
+/* The search form */
+
+footer form{
+    position: relative;
+}
+
+footer form input{
+    display: block;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    color: #32383A;
+    width: 100%;
+    padding: 18px 50px 18px 18px;
+    outline: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px #eee;
+}
+
+footer form input:focus{
+    border-color:#ccc;
+}
+
+/* Changing the placeholder color */
+
+footer form input::-webkit-input-placeholder {
+    color:  #5c666b;
+}
+
+footer form input::-moz-placeholder {
+    opacity: 1;
+    color:  #5c666b;
+}
+
+footer form input:-ms-input-placeholder{
+    color:  #5c666b;
+}
+
+/* The magnify glass icon */
+
+footer form i{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 16px;
+    right: 18px;
+
+    color: #d1d2d2;
+    font-size: 20px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1100px) {
+
+    footer .footer-left{
+        margin-bottom: 50px;
+    }
+
+    footer .footer-right{
+        float: left;
+        clear: left;
+    }
+
+}

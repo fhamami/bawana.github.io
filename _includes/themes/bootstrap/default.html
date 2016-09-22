@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
 
     <title>{{ page.title }}</title>
@@ -8,56 +8,76 @@
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="{{ ASSET_PATH }}/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  
+    <link href="{{ ASSET_PATH }}bootstrap/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ ASSET_PATH }}bootstrap/css/style.css">
+
+    <script src="{{ ASSET_PATH }}bootstrap/js/modernizr.js"></script>
+
     <!--[if lt IE 9]>
-      <script src="{{ ASSET_PATH }}/resources/respond/Respond.min.js"></script>
+    <script src="{{ ASSET_PATH }}/resources/respond/Respond.min.js"></script>
     <![endif]-->
 
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
-  </head>
+</head>
 
-  <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+<body>
+
+    <header class="header">
+        <!-- <h1 class="header_logo">{{ site.title }}</h1> -->
+        <img src="{{ ASSET_PATH }}bootstrap/img/logo.png">
+    </header>
+
+    <section class="head offset">
+          <section class="list_tmp template_1">
+            <div class="container">
+              <div class="row">
+                <p><a class="btn btn-default" role="button">Live Demo</a> <a class="btn btn-action btn-default" role="button">DOWNLOAD NOW</a></p>
+              </div>
+            </div>
+          </section>
+
+          <section class="list_tmp template_2">
+            <div class="container">
+              <div class="row">
+                <p><a class="btn btn-default" role="button">Live Demo</a> <a class="btn btn-action btn-default" role="button">DOWNLOAD NOW</a></p>
+              </div>
+            </div>
+          </section>
+    </section>
+
+    <footer>
+
+        <div class="footer-left">
+            <h3>{{ page.title }}</h3>
+            <p class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">&copy; Copyright 2016</p>
         </div>
 
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
+        <div class="footer-right"  data-bottom-top="max-width: 200px;" data-bottom-bottom="max-width: 600px;">
+            <form method="get" action="#">
+                <input placeholder="Search our website"/>
+                <i class="material-icons"></i>
+            </form>
         </div>
-      </div>
-    </nav>
-    <div class="container">
-      {{ content }}
-      <hr>
-      <footer>
-        <p>
-          &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-          <span class="pull-right text-muted">
-            powered by
-            <a href="http://dbtek.github.io/jekyll-bootstrap-3" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll-Bootstrap-3</a>
-            and <a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap 3.0.3</a>
-          </span>
-        </p>
-      </footer>
-    </div>
+
+    </footer>
 
     {% include JB/analytics %}
-    <script src="{{ ASSET_PATH }}/resources/jquery/jquery.min.js"></script>
-    <script src="{{ ASSET_PATH }}/resources/bootstrap/js/bootstrap.min.js"></script>
-  </body>
+
+    <script src="{{ ASSET_PATH }}bootstrap/resources/jquery/jquery.min.js"></script>
+    <script src="{{ ASSET_PATH }}bootstrap/js/skrollr.min.js"></script>
+    <script src="{{ ASSET_PATH }}bootstrap/js/index.js"></script>
+
+    <script>
+        skrollr.init();
+    </script>
+
+</body>
 </html>
